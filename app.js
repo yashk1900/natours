@@ -11,6 +11,7 @@ const cookieParser = require('cookie-parser');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 
+//Start express app
 const app = express();
 
 app.set('view engine', 'pug');
@@ -71,7 +72,7 @@ app.use(
 //Test middleware
 app.use((req, res, next) => {
   req.Time = new Date().toISOString();
-  console.log(req.cookies);
+  // console.log(req.cookies);
   next();
 });
 
